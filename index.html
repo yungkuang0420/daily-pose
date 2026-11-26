@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-pose-date="2026-11-26">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -125,17 +125,17 @@
 <main class="card">
   <div class="top">
     <p class="brand">🏋️ 오늘의 인증 포즈</p>
-    <p class="date">2026년 11월 26일 목요일</p>
+    <p class="date" id="poseDate">2026년 11월 26일 목요일</p>
   </div>
 
-  <span class="badge">운동 × 밈</span>
-  <h1>스쿼트 <em>브이(V)</em>!</h1>
+  <span class="badge" id="poseBadge">운동 × 밈</span>
+  <h1 id="poseTitle">스쿼트 <em>브이(V)</em>!</h1>
 
   <figure class="photo">
     <img src="poses/2026-11-26.png?v=20261126" alt="스쿼트 자세로 앉아 양손으로 브이를 그리는 캐릭터" width="1000" height="1000" decoding="async">
   </figure>
 
-  <p class="desc">
+  <p class="desc" id="poseDesc">
     발을 어깨너비보다 넓게 벌리고, 엉덩이를 뒤로 빼며 허벅지가 바닥과 평행이 될 때까지 앉아주세요.
     그 자세 그대로 <b>양손 브이(V)</b>를 그려 10초만 버티면 오늘 인증 완료!
   </p>
@@ -167,6 +167,47 @@
   }
   tick(); setInterval(tick, 1000);
 
+  /* 오늘 포즈 동기화 —
+     GitHub Pages는 HTML을 최대 10분가량 캐시한다. 6시 직후에 옛 페이지가 떠도
+     poses-history.json(캐시 무효화 쿼리)을 읽어 지금 시각의 포즈로 바로 바꿔준다. */
+  var WD = ['일', '월', '화', '수', '목', '금', '토'];
+  function kstParts(d) {
+    return new Date(d.getTime() + (9 * 60 + d.getTimezoneOffset()) * 60000);
+  }
+  function kstISO(d) {
+    var n = kstParts(d);
+    return n.getUTCFullYear() + '-' + String(n.getUTCMonth() + 1).padStart(2, '0') + '-' + String(n.getUTCDate()).padStart(2, '0');
+  }
+  function render(p) {
+    var ymd = p.date.split('-');
+    var d = kstParts(new Date(Date.UTC(+ymd[0], +ymd[1] - 1, +ymd[2], 6, 0, 0)));
+    document.getElementById('poseDate').textContent = ymd[0] + '년 ' + (+ymd[1]) + '월 ' + (+ymd[2]) + '일 ' + WD[d.getUTCDay()] + '요일';
+    document.getElementById('poseBadge').textContent = p.category || '';
+    document.getElementById('poseTitle').textContent = p.title || '';
+    var img = document.querySelector('.photo img');
+    img.src = p.image + '?v=' + p.date.replace(/-/g, '');
+    img.alt = p.alt || p.title || '오늘의 인증 포즈';
+    var desc = document.getElementById('poseDesc');
+    desc.textContent = p.description || '';
+    desc.style.whiteSpace = 'pre-line';
+    document.title = '오늘의 인증 포즈 · ' + ymd[0] + '년 ' + (+ymd[1]) + '월 ' + (+ymd[2]) + '일';
+    document.documentElement.setAttribute('data-pose-date', p.date);
+  }
+  try {
+    fetch('poses-history.json?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (!j || !Array.isArray(j.poses) || !j.poses.length) return;
+        var today = kstISO(new Date());
+        var past = j.poses.filter(function (p) { return p.date <= today; });
+        var p = past[past.length - 1];
+        if (!p) return;
+        if (p.date === document.documentElement.getAttribute('data-pose-date')) return;
+        render(p);
+      })
+      .catch(function () {});
+  } catch (e) {}
+
   /* 공유 */
   var btn = document.getElementById('shareBtn');
   var toast = document.getElementById('toast');
@@ -175,9 +216,10 @@
     setTimeout(function () { toast.classList.remove('show'); }, 1800);
   }
   btn.addEventListener('click', function () {
+    var t = (document.getElementById('poseTitle').textContent || '오늘의 포즈').trim();
     var data = {
       title: '오늘의 인증 포즈',
-      text: '오늘의 인증 포즈: 스쿼트 브이(V)! 🏋️',
+      text: '오늘의 인증 포즈: ' + t + ' 🏋️',
       url: location.href.split('#')[0]
     };
     if (navigator.share) {
