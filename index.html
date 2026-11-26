@@ -154,9 +154,9 @@
 (function () {
   /* 다음 6시(KST)까지 남은 시간 */
   var out = document.getElementById('next');
-  function kst() { return new Date(Date.now() + (9 * 60 + new Date().getTimezoneOffset()) * 60000); }
+  function kst(d) { return new Date(d.getTime() + 9 * 3600 * 1000); }
   function tick() {
-    var n = kst();
+    var n = kst(new Date());
     var t = new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate(), 6, 0, 0));
     if (t.getTime() <= n.getTime()) t.setUTCDate(t.getUTCDate() + 1);
     var s = Math.max(0, Math.floor((t - n) / 1000));
@@ -172,7 +172,7 @@
      poses-history.json(캐시 무효화 쿼리)을 읽어 지금 시각의 포즈로 바로 바꿔준다. */
   var WD = ['일', '월', '화', '수', '목', '금', '토'];
   function kstParts(d) {
-    return new Date(d.getTime() + (9 * 60 + d.getTimezoneOffset()) * 60000);
+    return new Date(d.getTime() + 9 * 3600 * 1000);
   }
   function kstISO(d) {
     var n = kstParts(d);
