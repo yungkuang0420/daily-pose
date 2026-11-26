@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-pose-date="2026-11-20">
+<html lang="ko" data-pose-date="2026-11-26">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -184,7 +184,9 @@
     var d = kstParts(new Date(Date.UTC(+ymd[0], +ymd[1] - 1, +ymd[2], 6, 0, 0)));
     document.getElementById('poseDate').textContent = ymd[0] + '년 ' + (+ymd[1]) + '월 ' + (+ymd[2]) + '일 ' + WD[d.getUTCDay()] + '요일';
     document.getElementById('poseBadge').textContent = p.category || '';
-    document.getElementById('poseTitle').textContent = p.title || '';
+    var ttl = p.title || '';
+    var escT = ttl.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+    document.getElementById('poseTitle').innerHTML = escT.replace(/\s(\S+)$/, ' <em>$1</em>');
     var img = document.querySelector('.photo img');
     img.src = p.image + '?v=' + p.date.replace(/-/g, '');
     img.alt = p.alt || p.title || '오늘의 인증 포즈';
