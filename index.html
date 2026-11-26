@@ -228,7 +228,13 @@
         var past = j.poses.filter(function (p) { return p.date <= today; });
         var p = past[past.length - 1];
         if (!p) return;
-        if (p.date === document.documentElement.getAttribute('data-pose-date')) return;
+        /* 날짜가 같아도 정적 스냅샷과 JSON 설명이 어긋나 있으면(캐시된 옛 페이지 등) 다시 그린다. */
+        var norm = function (s) { return String(s || '').replace(/\s+/g, ' ').trim(); };
+        if (
+          p.date === document.documentElement.getAttribute('data-pose-date') &&
+          norm(document.getElementById('poseTitle').textContent) === norm(p.title) &&
+          norm(document.getElementById('poseDesc').innerHTML) === norm(descHTML(p.description))
+        ) return;
         render(p);
       })
       .catch(function () {});
