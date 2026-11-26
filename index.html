@@ -3,19 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>오늘의 인증 포즈 · 2026년 11월 26일</title>
-<meta name="theme-color" content="#e9f7f0">
-<meta name="description" content="운동방 오늘의 인증 포즈 — 매일 아침 6시(KST)에 새로운 포즈로 업데이트됩니다.">
+<title>pooshe-up (푸쉬업) · 오늘의 인증 포즈 · 2026년 11월 26일</title>
+<meta name="theme-color" content="#111b16">
+<meta name="description" content="💪 pooshe-up(푸쉬업) 운동방 오늘의 인증 포즈 — 매일 아침 6시(KST)에 새로운 포즈로 업데이트됩니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="pooshe-up (푸쉬업)">
+<meta property="og:title" content="pooshe-up (푸쉬업) · 오늘의 인증 포즈">
+<meta property="og:description" content="💪 pooshe-up(푸쉬업) 운동방의 오늘 인증 포즈를 확인하고 같이 인증해요. 매일 아침 6시(KST) 업데이트.">
+<meta property="og:url" content="https://yungkuang0420.github.io/daily-pose/">
+<meta property="og:image" content="https://yungkuang0420.github.io/daily-pose/poses/2026-11-26.png?v=20261126c">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1000">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="pooshe-up (푸쉬업) · 오늘의 인증 포즈">
+<meta name="twitter:description" content="💪 pooshe-up(푸쉬업) 운동방의 오늘 인증 포즈. 매일 아침 6시(KST) 업데이트.">
+<meta name="twitter:image" content="https://yungkuang0420.github.io/daily-pose/poses/2026-11-26.png?v=20261126c">
 <style>
   :root{
-    --mint:#2fbf9a;
-    --mint-deep:#157d67;
-    --mint-soft:#d8f3e9;
-    --cream:#fdf8ec;
-    --ink:#1c2b28;
-    --ink-soft:#5c6f6a;
-    --line:rgba(28,43,40,.08);
+    --paper:#f3f2ec;
     --card:#ffffff;
+    --ink:#121a16;
+    --ink-soft:#66766e;
+    --line:rgba(17,27,22,.10);
+    --brand:#111b16;
+    --brand-2:#223429;
+    --lime:#d9f24a;
+    --lime-soft:rgba(217,242,74,.32);
+    --pose-red:#dc2626;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;padding:0}
@@ -24,9 +38,9 @@
     font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,"Segoe UI",Roboto,sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(120% 80% at 10% 0%, #f3fbf6 0%, rgba(243,251,246,0) 60%),
-      radial-gradient(100% 70% at 100% 10%, #fdf6e6 0%, rgba(253,246,230,0) 55%),
-      linear-gradient(170deg,#eaf8f2 0%,#f7fbf8 45%,#fdf9ee 100%);
+      radial-gradient(85% 55% at 100% -8%, rgba(217,242,74,.38) 0%, rgba(217,242,74,0) 62%),
+      radial-gradient(70% 50% at 0% 0%, rgba(34,52,41,.06) 0%, rgba(34,52,41,0) 58%),
+      var(--paper);
     background-attachment:fixed;
     display:flex;
     justify-content:center;
@@ -34,105 +48,207 @@
     padding:20px 16px calc(28px + env(safe-area-inset-bottom));
     -webkit-text-size-adjust:100%;
   }
+  /* 운동방 바닥 라인 — 아주 옅은 그리드 */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:linear-gradient(rgba(17,27,22,.035) 1px,transparent 1px);
+    background-size:100% 30px;
+  }
   .card{
+    position:relative;z-index:1;
     width:100%;
     max-width:460px;
     background:var(--card);
-    border-radius:26px;
+    border-radius:28px;
     padding:26px 22px 22px;
-    box-shadow:0 18px 44px rgba(21,125,103,.10), 0 2px 6px rgba(21,125,103,.06);
-    border:1px solid rgba(255,255,255,.7);
+    box-shadow:0 24px 58px rgba(17,27,22,.14), 0 2px 6px rgba(17,27,22,.05);
+    border:1px solid rgba(17,27,22,.06);
+    overflow:hidden;
     animation:rise .5s cubic-bezier(.2,.8,.2,1) both;
+  }
+  /* 상단 브랜드 스트라이프: 잉크 + 라임 */
+  .card::before{
+    content:"";position:absolute;left:0;right:0;top:0;height:4px;
+    background:linear-gradient(90deg,var(--brand) 0%,var(--brand) 40%,var(--lime) 40%,var(--lime) 100%);
   }
   @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
-  .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}
-  .brand{margin:0;font-size:15px;font-weight:800;letter-spacing:-.2px;color:var(--mint-deep)}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:16px}
+  .brand{
+    display:inline-flex;align-items:center;gap:7px;margin:0;
+    padding:7px 11px 7px 10px;border-radius:999px;
+    background:var(--brand);color:#fff;
+    font-size:14px;font-weight:900;letter-spacing:-.3px;
+    box-shadow:0 8px 18px rgba(17,27,22,.20);
+  }
+  .brand .brand-emoji{font-size:13px;line-height:1;transform:translateY(.5px)}
+  .brand .brand-kr{
+    font-size:10.5px;font-weight:900;letter-spacing:0;color:#0d150d;
+    background:var(--lime);border-radius:6px;padding:2.5px 6px;line-height:1.2;
+  }
   .date{
-    margin:0;font-size:12.5px;font-weight:600;color:var(--ink-soft);
-    background:var(--mint-soft);border-radius:999px;padding:5px 11px;white-space:nowrap;
+    margin:0;font-size:11.5px;font-weight:700;color:var(--ink-soft);letter-spacing:-.25px;
+    background:#fafaf5;border:1px solid var(--line);border-radius:999px;padding:5px 10px;white-space:nowrap;
   }
 
+  .kicker-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 9px}
+  .kicker{
+    display:inline-flex;align-items:center;gap:7px;margin:0;
+    font-size:11px;font-weight:900;letter-spacing:.14em;color:var(--ink-soft);
+  }
+  .kicker::before{content:"";width:16px;height:3px;border-radius:2px;background:var(--lime);box-shadow:0 0 0 1px rgba(168,198,42,.35) inset}
   .badge{
-    display:inline-block;font-size:12px;font-weight:800;letter-spacing:.2px;
-    color:var(--mint-deep);background:linear-gradient(135deg,#e3f8ef,#d3f0ff);
-    border:1px solid rgba(47,191,154,.22);border-radius:999px;padding:5px 12px;margin-bottom:10px;
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:11px;font-weight:800;letter-spacing:-.1px;
+    color:var(--brand);background:var(--lime-soft);
+    border:1px solid rgba(168,198,42,.45);border-radius:8px;padding:4px 9px;
+    white-space:nowrap;
   }
+  .badge::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--brand);flex:none}
+
   h1{
-    margin:0 0 16px;font-size:25px;line-height:1.28;font-weight:900;letter-spacing:-.6px;
+    margin:0 0 16px;font-size:26px;line-height:1.26;font-weight:900;letter-spacing:-.8px;color:var(--ink);
   }
-  h1 em{font-style:normal;color:var(--mint-deep)}
+  h1 em{
+    font-style:normal;
+    background:linear-gradient(180deg,transparent 60%,rgba(217,242,74,.80) 60%);
+    -webkit-box-decoration-break:clone;box-decoration-break:clone;
+    padding:0 2px;
+  }
 
   figure{margin:0}
   .photo{
-    position:relative;border-radius:20px;overflow:hidden;
-    background:var(--cream);
-    border:1px solid var(--line);
-    box-shadow:0 10px 24px rgba(21,125,103,.10);
+    position:relative;border-radius:18px;overflow:hidden;
+    background:#efeee8;
+    border:1px solid rgba(17,27,22,.08);
+    box-shadow:0 14px 30px rgba(17,27,22,.13);
   }
   .photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+  .photo::after{
+    content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.30);
+  }
 
   .desc{
-    margin:18px 2px 0;font-size:15px;line-height:1.72;color:#2a3b37;letter-spacing:-.2px;
+    margin:18px 2px 0;font-size:15px;line-height:1.76;color:#2c3a33;letter-spacing:-.18px;
   }
-  .desc b{color:var(--mint-deep);font-weight:800}
+  .desc b{color:var(--brand-2);font-weight:800}
   /* 꼭 해야 하는 핵심 포인트 동작 — 빨간색 굵게 */
-  .desc .pose-point{color:#dc2626;font-weight:800;letter-spacing:-.1px}
+  .desc .pose-point{
+    color:var(--pose-red);font-weight:800;letter-spacing:-.1px;
+    background:linear-gradient(180deg,transparent 70%,rgba(220,38,38,.13) 70%);
+  }
 
   .share{
-    display:flex;align-items:center;justify-content:center;gap:7px;
-    width:100%;margin-top:18px;padding:14px 16px;
-    font:inherit;font-size:15px;font-weight:800;letter-spacing:-.3px;color:#fff;
-    background:linear-gradient(135deg,var(--mint) 0%,#1ea7a0 100%);
-    border:0;border-radius:15px;cursor:pointer;
-    box-shadow:0 8px 18px rgba(47,191,154,.30);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    width:100%;margin-top:18px;padding:15px 16px;
+    font:inherit;font-size:15px;font-weight:900;letter-spacing:-.35px;color:#fff;
+    background:linear-gradient(135deg,var(--brand-2) 0%,var(--brand) 62%,#0a110d 100%);
+    border:0;border-radius:16px;cursor:pointer;
+    box-shadow:0 12px 24px rgba(17,27,22,.26), inset 0 1px 0 rgba(255,255,255,.08);
     transition:transform .12s ease, box-shadow .12s ease;
   }
-  .share:active{transform:scale(.98);box-shadow:0 4px 10px rgba(47,191,154,.28)}
+  .share::before{
+    content:"";width:6px;height:6px;border-radius:50%;background:var(--lime);flex:none;
+    box-shadow:0 0 0 3px rgba(217,242,74,.18);
+  }
+  .share:active{transform:scale(.985);box-shadow:0 6px 14px rgba(17,27,22,.26)}
 
   .next{
-    margin:16px 0 0;text-align:center;font-size:12.5px;font-weight:600;color:var(--ink-soft);
+    margin:15px 0 0;text-align:center;font-size:12px;font-weight:700;color:var(--ink-soft);letter-spacing:-.15px;
   }
-  .next strong{color:var(--mint-deep);font-variant-numeric:tabular-nums;font-weight:800}
+  .next strong{
+    color:#0d150d;font-variant-numeric:tabular-nums;font-weight:900;letter-spacing:0;
+    background:var(--lime-soft);border-radius:6px;padding:2px 7px;margin-left:2px;
+  }
 
   footer{
-    margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);
-    text-align:center;font-size:12px;line-height:1.75;color:#6d827b;letter-spacing:-.1px;
+    margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+    text-align:center;font-size:11.5px;line-height:1.8;color:#7c8b83;letter-spacing:-.12px;
+  }
+  footer .brand-line{
+    display:block;margin-bottom:3px;
+    font-size:12px;font-weight:900;letter-spacing:-.3px;color:var(--brand);
+  }
+  footer .brand-line .kr{
+    display:inline-block;font-size:10px;font-weight:900;letter-spacing:0;color:#0d150d;
+    background:var(--lime);border-radius:4px;padding:1px 5px;margin-left:2px;transform:translateY(-1px);
   }
 
   .toast{
-    position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));
+    position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));z-index:5;
     transform:translate(-50%,14px);opacity:0;pointer-events:none;
-    background:rgba(28,43,40,.92);color:#fff;font-size:13px;font-weight:700;
+    background:rgba(17,27,22,.94);color:#fff;font-size:13px;font-weight:700;
     padding:10px 16px;border-radius:12px;transition:opacity .22s ease, transform .22s ease;
+    max-width:calc(100vw - 40px);
   }
   .toast.show{opacity:1;transform:translate(-50%,0)}
 
   @media (max-width:360px){
-    .card{padding:22px 16px 18px;border-radius:22px}
+    .card{padding:24px 16px 18px;border-radius:24px}
     h1{font-size:22px}
-    .brand{font-size:14px}
-    .date{font-size:11.5px;padding:4px 9px}
+    .brand{font-size:13px;padding:6px 9px 6px 8px;gap:6px}
+    .brand .brand-kr{font-size:10px;padding:2px 5px}
+    .date{font-size:11px;padding:4px 8px}
+    .kicker{font-size:10px;letter-spacing:.1em}
+    .badge{font-size:10.5px;padding:3px 7px}
+    .share{font-size:14px;padding:14px 12px}
   }
   @media (prefers-color-scheme:dark){
-    body{background:linear-gradient(170deg,#0e1b18 0%,#10231f 60%,#141d1a 100%)}
-    .card{background:#16241f;border-color:rgba(255,255,255,.06);box-shadow:0 18px 44px rgba(0,0,0,.45)}
-    h1{color:#eaf6f1}
-    .desc{color:#d3e4de}
-    .desc .pose-point{color:#ff6f6f}
-    .date{background:rgba(47,191,154,.16)}
-    footer{color:#7d9a92}
+    :root{
+      --paper:#0a100d;
+      --card:#151d19;
+      --ink:#eef4ef;
+      --ink-soft:#94a79d;
+      --line:rgba(255,255,255,.09);
+      --brand:#d9f24a;
+      --brand-2:#c9e63e;
+      --lime-soft:rgba(217,242,74,.16);
+      --pose-red:#ff7a7a;
+    }
+    body{
+      background:
+        radial-gradient(85% 55% at 100% -8%, rgba(217,242,74,.10) 0%, rgba(217,242,74,0) 62%),
+        linear-gradient(170deg,#0a100d 0%,#0d1512 60%,#0b120f 100%);
+    }
+    body::before{background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px)}
+    .card{background:var(--card);border-color:rgba(255,255,255,.07);box-shadow:0 24px 58px rgba(0,0,0,.55)}
+    .card::before{background:linear-gradient(90deg,#1d2a22 0%,#1d2a22 40%,var(--lime) 40%,var(--lime) 100%)}
+    .brand{background:var(--lime);color:#0d150d;box-shadow:0 8px 18px rgba(0,0,0,.45)}
+    .brand .brand-kr{background:#0d150d;color:var(--lime)}
+    .date{background:rgba(255,255,255,.05);color:var(--ink-soft);border-color:rgba(255,255,255,.09)}
+    .kicker{color:#8fa398}
+    h1{color:var(--ink)}
+    h1 em{background:linear-gradient(180deg,transparent 60%,rgba(217,242,74,.28) 60%)}
+    .photo{background:#0f1613;border-color:rgba(255,255,255,.08)}
+    .desc{color:#d3e2da}
+    .desc b{color:#cfe9a8}
+    .desc .pose-point{color:var(--pose-red);background:linear-gradient(180deg,transparent 70%,rgba(255,122,122,.16) 70%)}
+    .badge{color:#e9f7b0;border-color:rgba(217,242,74,.30);background:rgba(217,242,74,.12)}
+    .badge::before{background:var(--lime)}
+    .share{color:#0d150d;background:linear-gradient(135deg,#e3fa5e 0%,var(--lime) 55%,#bcdc2f 100%);box-shadow:0 12px 24px rgba(0,0,0,.5)}
+    .share::before{background:#111b16;box-shadow:0 0 0 3px rgba(17,27,22,.14)}
+    .next strong{background:rgba(217,242,74,.85);color:#0d150d}
+    footer{color:#83988e}
+    footer .brand-line{color:var(--lime)}
+    footer .brand-line .kr{background:var(--lime);color:#0d150d}
+    .toast{background:rgba(238,244,239,.95);color:#0d150d}
   }
 </style>
 </head>
 <body>
 <main class="card">
   <div class="top">
-    <p class="brand">🏋️ 오늘의 인증 포즈</p>
+    <p class="brand">
+      <span class="brand-emoji">💪</span><span>pooshe-up</span><span class="brand-kr">푸쉬업</span>
+    </p>
     <p class="date" id="poseDate">2026년 11월 26일 목요일</p>
   </div>
 
-  <span class="badge" id="poseBadge">운동 × 밈</span>
+  <div class="kicker-row">
+    <p class="kicker">오늘의 인증 포즈</p>
+    <span class="badge" id="poseBadge">운동 × 밈</span>
+  </div>
   <h1 id="poseTitle">스쿼트 한 손 <em>브이(V)</em>!</h1>
 
   <figure class="photo">
@@ -144,12 +260,13 @@
     남은 한 손으로 <strong class="pose-point">브이(V)</strong>를 그려 <strong class="pose-point">10초</strong>만 버티면 오늘 인증 완료!
   </p>
 
-  <button class="share" type="button" id="shareBtn">📤 운동방에 공유하기</button>
+  <button class="share" type="button" id="shareBtn">💪 pooshe-up 운동방에 공유하기</button>
 
   <p class="next" id="next">다음 포즈까지 <strong>--:--:--</strong></p>
 
   <footer>
-    매일 아침 6시(KST)에 새로운 포즈로 업데이트됩니다 · 최소 3개월간 중복 없음<br>
+    <span class="brand-line">💪 pooshe-up <span class="kr">푸쉬업</span> 운동방 전용 · 매일 아침 6시(KST) 업데이트</span>
+    최소 3개월간 같은 포즈 없음<br>
     모든 포즈는 한 손에 스마트폰을 들고 셀카를 찍는 상황 기준이에요
   </footer>
 </main>
@@ -207,6 +324,9 @@
     /* 같은 날짜에 이미지를 교체한 경우가 있으므로 image_v가 있으면 그 값을 캐시 키로 쓴다. */
     return p.image + '?v=' + (p.image_v || p.date.replace(/-/g, ''));
   }
+  function pageTitle(ymd) {
+    return 'pooshe-up (푸쉬업) · 오늘의 인증 포즈 · ' + ymd[0] + '년 ' + (+ymd[1]) + '월 ' + (+ymd[2]) + '일';
+  }
   function render(p) {
     var ymd = p.date.split('-');
     var d = kstParts(new Date(Date.UTC(+ymd[0], +ymd[1] - 1, +ymd[2], 6, 0, 0)));
@@ -221,7 +341,11 @@
     var desc = document.getElementById('poseDesc');
     desc.innerHTML = descHTML(p.description);
     desc.style.whiteSpace = 'pre-line';
-    document.title = '오늘의 인증 포즈 · ' + ymd[0] + '년 ' + (+ymd[1]) + '월 ' + (+ymd[2]) + '일';
+    var og = document.querySelector('meta[property="og:image"]');
+    if (og) og.setAttribute('content', 'https://yungkuang0420.github.io/daily-pose/' + imgSrc(p));
+    var tw = document.querySelector('meta[name="twitter:image"]');
+    if (tw) tw.setAttribute('content', 'https://yungkuang0420.github.io/daily-pose/' + imgSrc(p));
+    document.title = pageTitle(ymd);
     document.documentElement.setAttribute('data-pose-date', p.date);
   }
   try {
@@ -246,9 +370,10 @@
       .catch(function () {});
   } catch (e) {}
 
-  /* 공유 */
+  /* 공유 — 운동방 이름(pooshe-up / 푸쉬업)이 문구에 그대로 들어간다 */
   var btn = document.getElementById('shareBtn');
   var toast = document.getElementById('toast');
+  var SHARE_TITLE = 'pooshe-up (푸쉬업) · 오늘의 인증 포즈';
   function showToast(msg) {
     toast.textContent = msg; toast.classList.add('show');
     setTimeout(function () { toast.classList.remove('show'); }, 1800);
@@ -256,8 +381,8 @@
   btn.addEventListener('click', function () {
     var t = (document.getElementById('poseTitle').textContent || '오늘의 포즈').trim();
     var data = {
-      title: '오늘의 인증 포즈',
-      text: '오늘의 인증 포즈: ' + t + ' 🏋️',
+      title: SHARE_TITLE,
+      text: '💪 pooshe-up(푸쉬업) 오늘의 인증 포즈: ' + t + ' 🏋️',
       url: location.href.split('#')[0]
     };
     if (navigator.share) {
@@ -266,7 +391,7 @@
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(data.text + '\n' + data.url)
-        .then(function () { showToast('운동방에 붙여넣을 수 있게 복사했어요'); })
+        .then(function () { showToast('💪 pooshe-up 운동방에 붙여넣게 복사했어요'); })
         .catch(function () { showToast(data.url); });
     } else { showToast(data.url); }
   });
