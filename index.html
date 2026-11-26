@@ -136,7 +136,7 @@
   <h1 id="poseTitle">스쿼트 한 손 <em>브이(V)</em>!</h1>
 
   <figure class="photo">
-    <img src="poses/2026-11-26.png?v=20261126" alt="한 손으로 스마트폰을 들어 셀카를 찍으며 스쿼트 자세로 앉아, 남은 한 손으로 브이를 그리는 캐릭터" width="1000" height="1000" decoding="async">
+    <img src="poses/2026-11-26.png?v=20261126b" alt="한 손으로 스마트폰을 들어 셀카를 찍으며 스쿼트 자세로 앉아, 남은 한 손으로 브이를 그리는 캐릭터" width="1000" height="1000" decoding="async">
   </figure>
 
   <p class="desc" id="poseDesc">
@@ -203,6 +203,10 @@
       .replace(/\u0003/g, '<b>')
       .replace(/\u0004/g, '</b>');
   }
+  function imgSrc(p) {
+    /* 같은 날짜에 이미지를 교체한 경우가 있으므로 image_v가 있으면 그 값을 캐시 키로 쓴다. */
+    return p.image + '?v=' + (p.image_v || p.date.replace(/-/g, ''));
+  }
   function render(p) {
     var ymd = p.date.split('-');
     var d = kstParts(new Date(Date.UTC(+ymd[0], +ymd[1] - 1, +ymd[2], 6, 0, 0)));
@@ -212,7 +216,7 @@
     var escT = ttl.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
     document.getElementById('poseTitle').innerHTML = escT.replace(/\s(\S+)$/, ' <em>$1</em>');
     var img = document.querySelector('.photo img');
-    img.src = p.image + '?v=' + p.date.replace(/-/g, '');
+    img.src = imgSrc(p);
     img.alt = p.alt || p.title || '오늘의 인증 포즈';
     var desc = document.getElementById('poseDesc');
     desc.innerHTML = descHTML(p.description);
@@ -234,7 +238,8 @@
         if (
           p.date === document.documentElement.getAttribute('data-pose-date') &&
           norm(document.getElementById('poseTitle').textContent) === norm(p.title) &&
-          norm(document.getElementById('poseDesc').innerHTML) === norm(descHTML(p.description))
+          norm(document.getElementById('poseDesc').innerHTML) === norm(descHTML(p.description)) &&
+          document.querySelector('.photo img').getAttribute('src') === imgSrc(p)
         ) return;
         render(p);
       })

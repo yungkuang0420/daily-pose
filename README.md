@@ -49,6 +49,8 @@ POSE_IDEAS.md              # 아직 안 쓴 포즈 아이디어 풀 (전부 한 
 4. `poses-history.json`의 `poses` 배열 **맨 뒤에** 오늘 항목을 추가한다
    (`date`, `weekday`, `category`, `title`, `description`, `image`, `alt`, `prompt`).
    `description`에도 `.desc`와 똑같이 `<strong class="pose-point">` 표기를 넣는다.
+   **같은 날짜의 이미지를 다시 만들었을 때는** `image_v`(예: `20261126b`)를 올리고
+   `index.html`의 정적 `img src` 쿼리도 같이 바꿔야 브라우저 캐시에 옛 그림이 남지 않는다.
 5. 커밋 & 푸시 → GitHub Pages가 자동 반영(보통 1분 이내).
 
 ```bash
