@@ -14,6 +14,17 @@
       "image_v": "20261126c",
       "alt": "한 손으로 스마트폰을 들어 거울 셀카를 찍으며 스쿼트 자세로 앉아, 남은 한 손으로 브이를 그리는 덩치 큰 근육질 남자",
       "prompt": "실사 사진(거울 전신 셀카). 베이스: attachments/2026-11-26/IMG_0292-2ecabf0cca5348d9bb8b5b0582656278.jpg 를 --edit. 'Turn this into a realistic mirror selfie photograph of the same person: a big, broad-shouldered, heavily built muscular Korean man in his thirties with short cropped black hair and light stubble, wearing a comfortable loose plain short-sleeve t-shirt and soft training sweatpants. He takes a full-body mirror selfie in a bright, minimal home room, holding a smartphone in one hand at chest height with the screen visible in the reflection. He is standing in a deep squat with knees bent and thighs parallel to the floor, and his other free hand makes a clear V (peace) sign beside his head. Playful cheeky grin, looking into the mirror, natural skin texture, photorealistic, soft warm indoor light. Square 1:1 composition: full body from the top of the head to the bare feet fits inside the square frame with a small margin above and below, subject centered, no text, no watermark, no logos'"
+    },
+    {
+      "date": "2026-11-27",
+      "weekday": "금",
+      "category": "춤 × 밈",
+      "title": "체포하겠어 손가락 총 윙크!",
+      "description": "한 손으로 스마트폰을 들고 셀카 각도로 잡은 뒤, 남은 한 손은 <strong class=\"pose-point\">엄지와 검지를 펴서 손가락 총</strong>을 만들어 카메라를 겨눠 주세요. 여기에 <strong class=\"pose-point\">한쪽 눈 윙크</strong>와 장난기 있는 미소를 더하면 오늘 인증 완료!",
+      "image": "poses/2026-11-27.png",
+      "image_v": "20261127a",
+      "alt": "한 손으로 스마트폰 전면 셀카를 찍으며 상의를 탈의한 채 남은 한 손으로 손가락 총을 겨누고 윙크하는 덩치 큰 근육질 남자",
+      "prompt": "실사 사진(전면 카메라 셀카, 상탈). 베이스: attachments/2026-11-26/IMG_0293-bdb0e7a8dee54445a67df04de9dc7466.jpg 를 --edit. 'Turn this into a candid realistic front-camera smartphone selfie photograph of the same person: a big, broad-shouldered, heavily built muscular Korean man in his thirties with short cropped black hair and light stubble, shirtless showing broad muscular chest and shoulders in a bright minimal home room. One arm is extended forward toward the camera lens as if holding the smartphone to take a selfie, while his other free hand forms a playful finger gun (thumb up, index finger pointing toward the camera). He is winking one eye with a cheeky playful grin, natural skin texture, candid smartphone camera quality, soft warm indoor morning light. Square 1:1 composition, upper body and face well-framed with a small margin above his head, no text, no watermark, no logos'"
     }
   ]
 }
