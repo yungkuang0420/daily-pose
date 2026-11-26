@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "cycle_start": "2026-11-26",
+  "no_repeat_days": 90,
+  "rule": "가장 최근 no_repeat_days일 안에 쓴 title/category 조합은 다시 쓰지 않는다. 새 포즈를 올리기 전에 이 파일의 poses 배열 전체를 확인한다.",
+  "poses": [
+    {
+      "date": "2026-11-26",
+      "weekday": "목",
+      "category": "운동 × 밈",
+      "title": "스쿼트 브이(V)!",
+      "description": "발을 어깨너비보다 넓게 벌리고, 엉덩이를 뒤로 빼며 허벅지가 바닥과 평행이 될 때까지 앉아주세요. 그 자세 그대로 양손 브이(V)를 그려 10초만 버티면 오늘 인증 완료!",
+      "image": "poses/2026-11-26.png",
+      "alt": "스쿼트 자세로 앉아 양손으로 브이를 그리는 캐릭터",
+      "prompt": "Bright, clean flat vector-style illustration of a cheerful cartoon character doing a deep squat with both arms raised making V (peace) signs with both hands, energetic and playful workout vibe, simple pastel mint and cream background with soft rounded shapes, full body visible, thick friendly outlines, vibrant colors, no text, no letters, square composition, centered subject"
+    }
+  ]
+}

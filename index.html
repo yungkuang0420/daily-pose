@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>오늘의 인증 포즈 · 2026년 11월 26일</title>
+<meta name="theme-color" content="#e9f7f0">
+<meta name="description" content="운동방 오늘의 인증 포즈 — 매일 아침 6시(KST)에 새로운 포즈로 업데이트됩니다.">
+<style>
+  :root{
+    --mint:#2fbf9a;
+    --mint-deep:#157d67;
+    --mint-soft:#d8f3e9;
+    --cream:#fdf8ec;
+    --ink:#1c2b28;
+    --ink-soft:#5c6f6a;
+    --line:rgba(28,43,40,.08);
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(120% 80% at 10% 0%, #f3fbf6 0%, rgba(243,251,246,0) 60%),
+      radial-gradient(100% 70% at 100% 10%, #fdf6e6 0%, rgba(253,246,230,0) 55%),
+      linear-gradient(170deg,#eaf8f2 0%,#f7fbf8 45%,#fdf9ee 100%);
+    background-attachment:fixed;
+    display:flex;
+    justify-content:center;
+    padding:20px 16px calc(28px + env(safe-area-inset-bottom));
+    -webkit-text-size-adjust:100%;
+  }
+  .card{
+    width:100%;
+    max-width:460px;
+    background:var(--card);
+    border-radius:26px;
+    padding:26px 22px 22px;
+    box-shadow:0 18px 44px rgba(21,125,103,.10), 0 2px 6px rgba(21,125,103,.06);
+    border:1px solid rgba(255,255,255,.7);
+    animation:rise .5s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}
+  .brand{margin:0;font-size:15px;font-weight:800;letter-spacing:-.2px;color:var(--mint-deep)}
+  .date{
+    margin:0;font-size:12.5px;font-weight:600;color:var(--ink-soft);
+    background:var(--mint-soft);border-radius:999px;padding:5px 11px;white-space:nowrap;
+  }
+
+  .badge{
+    display:inline-block;font-size:12px;font-weight:800;letter-spacing:.2px;
+    color:var(--mint-deep);background:linear-gradient(135deg,#e3f8ef,#d3f0ff);
+    border:1px solid rgba(47,191,154,.22);border-radius:999px;padding:5px 12px;margin-bottom:10px;
+  }
+  h1{
+    margin:0 0 16px;font-size:25px;line-height:1.28;font-weight:900;letter-spacing:-.6px;
+  }
+  h1 em{font-style:normal;color:var(--mint-deep)}
+
+  figure{margin:0}
+  .photo{
+    position:relative;border-radius:20px;overflow:hidden;
+    background:var(--cream);
+    border:1px solid var(--line);
+    box-shadow:0 10px 24px rgba(21,125,103,.10);
+  }
+  .photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+
+  .desc{
+    margin:18px 2px 0;font-size:15px;line-height:1.72;color:#2a3b37;letter-spacing:-.2px;
+  }
+  .desc b{color:var(--mint-deep);font-weight:800}
+
+  .share{
+    display:flex;align-items:center;justify-content:center;gap:7px;
+    width:100%;margin-top:18px;padding:14px 16px;
+    font:inherit;font-size:15px;font-weight:800;letter-spacing:-.3px;color:#fff;
+    background:linear-gradient(135deg,var(--mint) 0%,#1ea7a0 100%);
+    border:0;border-radius:15px;cursor:pointer;
+    box-shadow:0 8px 18px rgba(47,191,154,.30);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .share:active{transform:scale(.98);box-shadow:0 4px 10px rgba(47,191,154,.28)}
+
+  .next{
+    margin:16px 0 0;text-align:center;font-size:12.5px;font-weight:600;color:var(--ink-soft);
+  }
+  .next strong{color:var(--mint-deep);font-variant-numeric:tabular-nums;font-weight:800}
+
+  footer{
+    margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);
+    text-align:center;font-size:11.5px;line-height:1.7;color:#849790;letter-spacing:-.1px;
+  }
+
+  .toast{
+    position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));
+    transform:translate(-50%,14px);opacity:0;pointer-events:none;
+    background:rgba(28,43,40,.92);color:#fff;font-size:13px;font-weight:700;
+    padding:10px 16px;border-radius:12px;transition:opacity .22s ease, transform .22s ease;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:360px){
+    .card{padding:22px 16px 18px;border-radius:22px}
+    h1{font-size:22px}
+    .brand{font-size:14px}
+    .date{font-size:11.5px;padding:4px 9px}
+  }
+  @media (prefers-color-scheme:dark){
+    body{background:linear-gradient(170deg,#0e1b18 0%,#10231f 60%,#141d1a 100%)}
+    .card{background:#16241f;border-color:rgba(255,255,255,.06);box-shadow:0 18px 44px rgba(0,0,0,.45)}
+    h1{color:#eaf6f1}
+    .desc{color:#d3e4de}
+    .date{background:rgba(47,191,154,.16)}
+    footer{color:#7d9a92}
+  }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="top">
+    <p class="brand">🏋️ 오늘의 인증 포즈</p>
+    <p class="date">2026년 11월 26일 목요일</p>
+  </div>
+
+  <span class="badge">운동 × 밈</span>
+  <h1>스쿼트 <em>브이(V)</em>!</h1>
+
+  <figure class="photo">
+    <img src="poses/2026-11-26.png?v=20261126" alt="스쿼트 자세로 앉아 양손으로 브이를 그리는 캐릭터" width="1000" height="1000" decoding="async">
+  </figure>
+
+  <p class="desc">
+    발을 어깨너비보다 넓게 벌리고, 엉덩이를 뒤로 빼며 허벅지가 바닥과 평행이 될 때까지 앉아주세요.
+    그 자세 그대로 <b>양손 브이(V)</b>를 그려 10초만 버티면 오늘 인증 완료!
+  </p>
+
+  <button class="share" type="button" id="shareBtn">📤 운동방에 공유하기</button>
+
+  <p class="next" id="next">다음 포즈까지 <strong>--:--:--</strong></p>
+
+  <footer>
+    매일 아침 6시(KST)에 새로운 포즈로 업데이트됩니다 · 최소 3개월간 중복 없음
+  </footer>
+</main>
+<div class="toast" id="toast">링크를 복사했어요</div>
+
+<script>
+(function () {
+  /* 다음 6시(KST)까지 남은 시간 */
+  var out = document.getElementById('next');
+  function kst() { return new Date(Date.now() + (9 * 60 + new Date().getTimezoneOffset()) * 60000); }
+  function tick() {
+    var n = kst();
+    var t = new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate(), 6, 0, 0));
+    if (t.getTime() <= n.getTime()) t.setUTCDate(t.getUTCDate() + 1);
+    var s = Math.max(0, Math.floor((t - n) / 1000));
+    var h = String(Math.floor(s / 3600)).padStart(2, '0');
+    var m = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
+    var c = String(s % 60).padStart(2, '0');
+    out.innerHTML = '다음 포즈까지 <strong>' + h + ':' + m + ':' + c + '</strong>';
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* 공유 */
+  var btn = document.getElementById('shareBtn');
+  var toast = document.getElementById('toast');
+  function showToast(msg) {
+    toast.textContent = msg; toast.classList.add('show');
+    setTimeout(function () { toast.classList.remove('show'); }, 1800);
+  }
+  btn.addEventListener('click', function () {
+    var data = {
+      title: '오늘의 인증 포즈',
+      text: '오늘의 인증 포즈: 스쿼트 브이(V)! 🏋️',
+      url: location.href.split('#')[0]
+    };
+    if (navigator.share) {
+      navigator.share(data).catch(function () {});
+      return;
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(data.text + '\n' + data.url)
+        .then(function () { showToast('운동방에 붙여넣을 수 있게 복사했어요'); })
+        .catch(function () { showToast(data.url); });
+    } else { showToast(data.url); }
+  });
+})();
+</script>
+</body>
+</html>
