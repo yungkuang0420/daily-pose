@@ -11,9 +11,9 @@
       "title": "스쿼트 한 손 브이(V)!",
       "description": "한 손으로 폰을 들어 셀카 각도로 잡고, 발을 어깨너비보다 넓게 벌려 엉덩이를 뒤로 빼며 <strong class=\"pose-point\">허벅지가 바닥과 평행</strong>이 될 때까지 앉아주세요. 남은 한 손으로 <strong class=\"pose-point\">브이(V)</strong>를 그려 <strong class=\"pose-point\">10초</strong>만 버티면 오늘 인증 완료!",
       "image": "poses/2026-11-26.png",
-      "image_v": "20261126b",
-      "alt": "한 손으로 스마트폰을 들어 셀카를 찍으며 스쿼트 자세로 앉아, 남은 한 손으로 브이를 그리는 캐릭터",
-      "prompt": "Bright, clean flat vector-style illustration of a cheerful cartoon character taking a mirror/front-camera selfie with a smartphone: the character holds the smartphone up in one hand at selfie distance beside the face, screen toward the viewer, while squatting deeply with knees bent and thighs parallel to the floor, and the other free hand makes a clear V (peace) sign beside the head. Playful workout vibe, energetic smile, sporty athleisure outfit and sneakers, simple pastel mint and cream background with soft rounded shapes, thick friendly outlines, vibrant colors, full body visible, square composition, centered subject, no text, no letters, no logos"
+      "image_v": "20261126c",
+      "alt": "한 손으로 스마트폰을 들어 거울 셀카를 찍으며 스쿼트 자세로 앉아, 남은 한 손으로 브이를 그리는 덩치 큰 근육질 남자",
+      "prompt": "실사 사진(거울 전신 셀카). 베이스: attachments/2026-11-26/IMG_0292-2ecabf0cca5348d9bb8b5b0582656278.jpg 를 --edit. 'Turn this into a realistic mirror selfie photograph of the same person: a big, broad-shouldered, heavily built muscular Korean man in his thirties with short cropped black hair and light stubble, wearing a comfortable loose plain short-sleeve t-shirt and soft training sweatpants. He takes a full-body mirror selfie in a bright, minimal home room, holding a smartphone in one hand at chest height with the screen visible in the reflection. He is standing in a deep squat with knees bent and thighs parallel to the floor, and his other free hand makes a clear V (peace) sign beside his head. Playful cheeky grin, looking into the mirror, natural skin texture, photorealistic, soft warm indoor light. Square 1:1 composition: full body from the top of the head to the bare feet fits inside the square frame with a small margin above and below, subject centered, no text, no watermark, no logos'"
     }
   ]
 }
