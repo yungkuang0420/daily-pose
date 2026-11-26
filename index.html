@@ -76,6 +76,8 @@
     margin:18px 2px 0;font-size:15px;line-height:1.72;color:#2a3b37;letter-spacing:-.2px;
   }
   .desc b{color:var(--mint-deep);font-weight:800}
+  /* 꼭 해야 하는 핵심 포인트 동작 — 빨간색 굵게 */
+  .desc .pose-point{color:#dc2626;font-weight:800;letter-spacing:-.1px}
 
   .share{
     display:flex;align-items:center;justify-content:center;gap:7px;
@@ -117,6 +119,7 @@
     .card{background:#16241f;border-color:rgba(255,255,255,.06);box-shadow:0 18px 44px rgba(0,0,0,.45)}
     h1{color:#eaf6f1}
     .desc{color:#d3e4de}
+    .desc .pose-point{color:#ff6f6f}
     .date{background:rgba(47,191,154,.16)}
     footer{color:#7d9a92}
   }
@@ -137,8 +140,8 @@
   </figure>
 
   <p class="desc" id="poseDesc">
-    발을 어깨너비보다 넓게 벌리고, 엉덩이를 뒤로 빼며 허벅지가 바닥과 평행이 될 때까지 앉아주세요.
-    그 자세 그대로 <b>양손 브이(V)</b>를 그려 10초만 버티면 오늘 인증 완료!
+    발을 어깨너비보다 넓게 벌리고, 엉덩이를 뒤로 빼며 <strong class="pose-point">허벅지가 바닥과 평행</strong>이 될 때까지 앉아주세요.
+    그 자세 그대로 <strong class="pose-point">양손 브이(V)</strong>를 그려 <strong class="pose-point">10초</strong>만 버티면 오늘 인증 완료!
   </p>
 
   <button class="share" type="button" id="shareBtn">📤 운동방에 공유하기</button>
@@ -179,6 +182,26 @@
     var n = kstParts(d);
     return n.getUTCFullYear() + '-' + String(n.getUTCMonth() + 1).padStart(2, '0') + '-' + String(n.getUTCDate()).padStart(2, '0');
   }
+  /* 설명 HTML 허용 범위 — <strong class="pose-point">(빨간 굵게)와 <b>만 통과시키고
+     나머지는 전부 이스케이프한다. JSON의 description이 그대로 innerHTML로 들어가도 안전. */
+  function escHTML(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function descHTML(s) {
+    var MARK = { open: '\u0001', close: '\u0002', bOpen: '\u0003', bClose: '\u0004' };
+    var t = String(s == null ? '' : s)
+      .replace(/<strong\s+class\s*=\s*["']pose-point["']\s*>/gi, MARK.open)
+      .replace(/<\/strong\s*>/gi, MARK.close)
+      .replace(/<b\s*>/gi, MARK.bOpen)
+      .replace(/<\/b\s*>/gi, MARK.bClose);
+    return escHTML(t)
+      .replace(/\u0001/g, '<strong class="pose-point">')
+      .replace(/\u0002/g, '</strong>')
+      .replace(/\u0003/g, '<b>')
+      .replace(/\u0004/g, '</b>');
+  }
   function render(p) {
     var ymd = p.date.split('-');
     var d = kstParts(new Date(Date.UTC(+ymd[0], +ymd[1] - 1, +ymd[2], 6, 0, 0)));
@@ -191,7 +214,7 @@
     img.src = p.image + '?v=' + p.date.replace(/-/g, '');
     img.alt = p.alt || p.title || '오늘의 인증 포즈';
     var desc = document.getElementById('poseDesc');
-    desc.textContent = p.description || '';
+    desc.innerHTML = descHTML(p.description);
     desc.style.whiteSpace = 'pre-line';
     document.title = '오늘의 인증 포즈 · ' + ymd[0] + '년 ' + (+ymd[1]) + '월 ' + (+ymd[2]) + '일';
     document.documentElement.setAttribute('data-pose-date', p.date);

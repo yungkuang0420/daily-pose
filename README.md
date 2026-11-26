@@ -20,6 +20,8 @@ POSE_IDEAS.md              # 아직 안 쓴 포즈 아이디어 풀
 
 1. `poses-history.json`의 `poses` 배열을 읽어 **최근 90일 안에 쓴 제목·소재인지** 확인한다.
    - 같은 제목/같은 동작/같은 소재는 금지. `POSE_IDEAS.md`에서 안 쓴 항목을 고른다.
+   - **비중 규칙**: 단체·커플 포즈는 쓰지 않고, 운동·요가(A/B)는 10일 중 1~2일(10~20%)만.
+     나머지 80~90%는 춤·안무(C)와 웃긴 밈(D)에서 고른다.
 2. 이미지를 만든다 — 밝고 선명한 일러스트, 깔끔한 배경, **글자 없음**, 1:1 정사각.
    저장 경로: `poses/YYYY-MM-DD.png`
 3. `index.html`에서 아래 5곳을 오늘 것으로 바꾼다.
@@ -28,9 +30,11 @@ POSE_IDEAS.md              # 아직 안 쓴 포즈 아이디어 풀
    - `.badge` (카테고리, 예: `운동 × 밈`)
    - `h1` (포즈 이름)
    - `img src` → `poses/YYYY-MM-DD.png?v=YYYYMMDD` 와 `alt`
-   - `.desc` (따라하기 1~2줄)
+   - `.desc` (따라하기 1~2줄) — 꼭 해야 하는 핵심 포인트 동작은
+     `<strong class="pose-point">…</strong>` 로 감싼다(빨간색 굵게 표시됨).
 4. `poses-history.json`의 `poses` 배열 **맨 뒤에** 오늘 항목을 추가한다
    (`date`, `weekday`, `category`, `title`, `description`, `image`, `alt`, `prompt`).
+   `description`에도 `.desc`와 똑같이 `<strong class="pose-point">` 표기를 넣는다.
 5. 커밋 & 푸시 → GitHub Pages가 자동 반영(보통 1분 이내).
 
 ```bash
@@ -47,4 +51,7 @@ git push origin main
   6시 직후에 옛 페이지가 떠도 새 포즈가 즉시 보인다. → 그래서 `index.html`과 `poses-history.json`을
   **항상 같이** 갱신해야 한다. (index.html은 JS 없이도 열리는 정적 스냅샷 역할)
 - **미리보기 방지**: 다음 날 포즈는 6시에 커밋하므로 그 전에는 저장소에 존재하지 않는다.
+- **설명 렌더링**: 동기화 스크립트는 `description`을 그대로 넣지 않고, 이스케이프한 뒤
+  `<strong class="pose-point">`와 `<b>`만 허용해서 innerHTML로 넣는다. 그래서 JSON에 적은
+  빨간 굵은 강조가 페이지에서도 그대로 보이고, 다른 태그는 글자로만 나온다.
 - **되돌리기**: 페이지를 예전 포즈로 되돌리려면 해당 커밋을 revert 하면 된다.
