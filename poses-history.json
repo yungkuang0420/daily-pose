@@ -25,6 +25,17 @@
       "image_v": "20261127a",
       "alt": "한 손으로 스마트폰 전면 셀카를 찍으며 상의를 탈의한 채 남은 한 손으로 손가락 총을 겨누고 윙크하는 덩치 큰 근육질 남자",
       "prompt": "실사 사진(전면 카메라 셀카, 상탈). 베이스: attachments/2026-11-26/IMG_0293-bdb0e7a8dee54445a67df04de9dc7466.jpg 를 --edit. 'Turn this into a candid realistic front-camera smartphone selfie photograph of the same person: a big, broad-shouldered, heavily built muscular Korean man in his thirties with short cropped black hair and light stubble, shirtless showing broad muscular chest and shoulders in a bright minimal home room. One arm is extended forward toward the camera lens as if holding the smartphone to take a selfie, while his other free hand forms a playful finger gun (thumb up, index finger pointing toward the camera). He is winking one eye with a cheeky playful grin, natural skin texture, candid smartphone camera quality, soft warm indoor morning light. Square 1:1 composition, upper body and face well-framed with a small margin above his head, no text, no watermark, no logos'"
+    },
+    {
+      "date": "2026-11-28",
+      "weekday": "토",
+      "category": "춤 × 밈",
+      "title": "샨셴부 회피 스텝!",
+      "description": "한 손으로 폰을 들어 거울 셀카 각도로 잡은 뒤, <strong class=\"pose-point\">한쪽 무릎을 굽히고 반대쪽 다리를 옆으로 길게 뻗어</strong> 상체를 비스듬히 틀어 주세요. 남은 한 손은 <strong class=\"pose-point\">손바닥을 펴서 옆으로 쓱 밀어내는 시늉</strong>을 하며 <strong class=\"pose-point\">시치미 뗀 표정</strong>을 지으면 오늘 인증 완료!",
+      "image": "poses/2026-11-28.png",
+      "image_v": "20261128a",
+      "alt": "한 손으로 스마트폰을 들어 거울 전신 셀카를 찍으며 한쪽 다리를 옆으로 길게 뻗고 남은 한 손으로 옆으로 빠져나가는 샨셴부 회피 스텝 포즈를 취한 남자",
+      "prompt": "실사 사진(거울 전신 셀카, 훈훈한 새 느낌 30%). 베이스: attachments/2026-11-27/IMG_0298-74cfa326d62849378a49ce7711c24134.jpg 를 --edit."
     }
   ]
 }
