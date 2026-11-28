@@ -36,6 +36,17 @@
       "image_v": "20261128a",
       "alt": "한 손으로 스마트폰을 들어 거울 전신 셀카를 찍으며 한쪽 다리를 옆으로 길게 뻗고 남은 한 손으로 옆으로 빠져나가는 샨셴부 회피 스텝 포즈를 취한 남자",
       "prompt": "실사 사진(거울 전신 셀카, 훈훈한 새 느낌 30%). 베이스: attachments/2026-11-27/IMG_0298-74cfa326d62849378a49ce7711c24134.jpg 를 --edit."
+    },
+    {
+      "date": "2026-11-29",
+      "weekday": "일",
+      "category": "웃긴 밈 × 연기",
+      "title": "거울 앞 억지 오열 챌린지!",
+      "description": "한 손으로 폰을 들어 거울 전신 셀카 각도로 잡고, 남은 한 손은 <strong class=\"pose-point\">주먹을 살짝 쥐어 눈가에 대고 눈물을 훔치는 시늉</strong>을 해 주세요. 몸은 당당한데 얼굴만 <strong class=\"pose-point\">금방이라도 울 것 같은 억울한 오열 표정</strong>을 지으면 오늘 인증 완료!",
+      "image": "poses/2026-11-29.png",
+      "image_v": "20261129a",
+      "alt": "한 손으로 스마트폰을 들어 거울 전신 셀카를 찍으며 상의를 탈의한 채 남은 한 손 주먹을 눈가에 대고 억울하게 우는 표정을 짓는 덩치 큰 근육질 남자",
+      "prompt": "실사 사진(거울 전신 셀카, 상탈, 기존 느낌 70%). 베이스: attachments/2026-11-26/IMG_0294-d3ce8c1181d348dc9d95ca6e6c82c917.jpg 를 --edit. 'Turn this into a realistic mirror selfie photograph of the same person: a big, broad-shouldered, heavily built muscular Korean man in his thirties with short cropped black hair and light stubble, shirtless showing broad muscular chest, shoulders and solid abs, wearing comfortable dark gray athletic training sweatpants. He takes a full-body mirror selfie in a bright, minimal home room, holding a smartphone in one hand at chest height with the screen visible in the reflection. With his other free hand loosely clenched near one eye as if wiping away tears, he makes a comedic exaggerated fake-crying expression with furrowed eyebrows and a pouting downturned mouth while standing tall. Natural skin texture, candid realistic smartphone photo quality, soft warm indoor morning light. Square 1:1 composition: full body from the top of the head to the bare feet fits inside the square frame with a small margin above and below, subject centered, no text, no watermark, no logos'"
     }
   ]
 }
